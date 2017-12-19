@@ -1,0 +1,36 @@
+#######################################
+# Syntax Coloring Map For PwmFan
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+PwmFan	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+end	KEYWORD2
+thresoldsWrite	KEYWORD2
+temperatureWrite	KEYWORD2
+rpmRead	KEYWORD2
+verbose	KEYWORD2
+silent	KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+PwmFan	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+DEFAULT_PWM_PIN	LITERAL1
+DUTY_OFF	LITERAL1
+DEFAULT_DUTY_MIN	LITERAL1
+DEFAULT_DUTY_MAX	LITERAL1
