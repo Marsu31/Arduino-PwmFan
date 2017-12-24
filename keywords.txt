@@ -24,7 +24,6 @@ silent	KEYWORD2
 # Instances (KEYWORD2)
 #######################################
 
-PwmFan	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)

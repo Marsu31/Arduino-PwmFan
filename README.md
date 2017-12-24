@@ -81,6 +81,8 @@ Compilation with **avr-g++**, use these options:
 
 ## Incoming
 
-- retrieve RPM value from tachymeter, use of [MsTimer2](http://playground.arduino.cc/Main/MsTimer2) library,
+- retrieve RPM value from tachometer, use of [MsTimer2](http://playground.arduino.cc/Main/MsTimer2) library,
 - control fans of type A (minimum RPM at 0%, need a switch to start/stop the fan), need feedback
 - control multiple fans.
+- better doc ! wiki ?
+- share schema
