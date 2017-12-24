@@ -40,6 +40,7 @@ void PwmFan::thresoldsWrite ( float tempMin, float tempMax )
     if ( tempMin < tempMax ) {
         _boundsSet= true;
         if ( tempMin != _tempMin || tempMax != _tempMax ) {
+            Serial.println ( F ( "thresold change" ) );
             _tempMin= tempMin;
             _tempMax= tempMax;
             _refresh ();
@@ -51,6 +52,7 @@ void PwmFan::temperatureWrite ( float temperature )
 {
     _temperatureSet= true;
     if ( temperature != _temperature ) {
+        Serial.println ( F ( "temperature change" ) );
         _temperature= temperature;
         _refresh ();
     }
@@ -106,7 +108,7 @@ void PwmFan::_begin ( char pin, unsigned int dutyCycleMin, unsigned int dutyCycl
         _dutyCycleMax= roundf ( _dutyCyclePcMax * 1023.0 / 100.0 );
     }
 
-    Timer1.initialize ( 40 );      // pwm norm says 25 kHz => 40 µs
+    Timer1.initialize ( 40 );      // pwm spec says 25 kHz => 40 µs
     Timer1.pwm ( _pin, DUTY_OFF ); // apply configuration
 
     _initialized= true;
@@ -158,19 +160,19 @@ void PwmFan::_refresh ()
             // duty cycle change : maj of fan speed
             Timer1.setPwmDuty ( _pin, _dutyCycle );
             if ( _verbose ) {
-                Serial.print ( F ( "temperature thresold min : " ) );
+                Serial.print ( F ( "t° thresold min : " ) );
                 Serial.print ( _tempMin );
-                Serial.print ( F ( ", temperature thresold max : " ) );
+                Serial.print ( F ( ", t° thresold max : " ) );
                 Serial.print ( _tempMax );
-                Serial.print ( F ( ", temperature : " ) );
+                Serial.print ( F ( ", t° : " ) );
                 Serial.print ( _temperature );
                 Serial.print ( F ( ", RPM : N/A" ) );
                 Serial.print ( F ( ", duty cycle min : " ) );
                 Serial.print ( _dutyCyclePcMin );
                 Serial.print ( F ( "%, duty cycle max : " ) );
-                Serial.print ( _dutyCycleMax );
+                Serial.print ( _dutyCyclePcMax );
                 Serial.print ( F ( "%, duty cycle : " ) );
-                Serial.print ( _dutyCycle );
+                Serial.print ( roundf ( _dutyCycle * 100.0 / 1023.0 ) );
                 Serial.println ( F ( "%" ) );
             }
         }
