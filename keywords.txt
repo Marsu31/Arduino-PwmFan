@@ -16,7 +16,10 @@ begin	KEYWORD2
 end	KEYWORD2
 thresoldsWrite	KEYWORD2
 temperatureWrite	KEYWORD2
+hysteresis KEYWORD2
+rpmCount	KEYWORD2
 rpmRead	KEYWORD2
+rpmTop	KEYWORD2
 verbose	KEYWORD2
 silent	KEYWORD2
 
@@ -24,6 +27,7 @@ silent	KEYWORD2
 # Instances (KEYWORD2)
 #######################################
 
+pwmFan	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)

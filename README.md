@@ -71,7 +71,7 @@ loop () {
 
 ## Tested with
 
-* Arduino Uno
+* Arduino Uno, Arduino Nano (chinese clone)
 
 ## Compilation
 
@@ -81,8 +81,11 @@ Compilation with **avr-g++**, use these options:
 
 ## Incoming
 
-- retrieve RPM value from tachometer, use of [MsTimer2](http://playground.arduino.cc/Main/MsTimer2) library,
-- control fans of type A (minimum RPM at 0%, need a switch to start/stop the fan), need feedback
+- soft start (from lower pwm value to asked speed)
+- soft stop (from current speed to 0)
+- minimum duration (if started run at least X minutes, X in constructor/setter, default 5min)
+- retrieve RPM value from tachometer, use of [MsTimer2](http://playground.arduino.cc/Main/MsTimer2) library, (done, todo : write doc)
+- control fans of type A (minimum RPM at 0%, need a switch to start/stop the fan), need feedback (done, todo : write doc)
 - control multiple fans.
 - better doc ! wiki ?
 - share schema
